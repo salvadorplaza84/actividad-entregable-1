@@ -1,15 +1,25 @@
 package ejerciciosexamen;
 
 /**
- * Imprime por pantalla si se repite el valor más alto del array, saca la media
- * y si esta Bien o Mal
- * 
+ * Programa que analiza un array de enteros.
+ * <p>
+ * Muestra por pantalla si el valor máximo del array se repite más de una vez
+ * ("SI"/"NO"), calcula la media y evalúa si es "BIEN" (media >= 5) o "MAL"
+ * (media < 5).
+ * </p>
  */
 
 public class p {
 	/**
-	 * int[] n = { 5, 7, 3, 7, 2, 9, 7 };
-	 * @param args
+	 * Punto de entrada del programa. Usa un array de ejemplo y muestra:
+	 * <ul>
+	 * <li>"SI" si el valor máximo se repite más de una vez; en caso contrario
+	 * "NO".</li>
+	 * <li>La media del array.</li>
+	 * <li>"BIEN" si la media es mayor o igual que 5; en caso contrario "MAL".</li>
+	 * </ul>
+	 *
+	 * @param args argumentos de línea de comandos (no se utilizan).
 	 */
 
 	public static void main(String[] args) {
@@ -26,7 +36,7 @@ public class p {
 			}
 		}
 
-		// Cuenta cuántas veces aparece c(el número mayor) y lo guarda en a
+		// Cuenta cuántas veces aparece c (el número mayor) y lo guarda en a
 		for (int i = 0; i < n.length; i++) {
 			if (n[i] == c) {
 				a++;
