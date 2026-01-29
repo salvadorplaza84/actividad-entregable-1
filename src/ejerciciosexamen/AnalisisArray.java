@@ -9,7 +9,7 @@ package ejerciciosexamen;
  * </p>
  */
 
-public class p {
+public class AnalisisArray {
 	/**
 	 * Punto de entrada del programa. Usa un array de ejemplo y muestra:
 	 * <ul>
