@@ -26,18 +26,14 @@ public class AnalisisArray {
 	public static void main(String[] args) {
 
 		int[] numeros = { 5, 7, 3, 7, 2, 9, 7 };
-		int repeticionesMaximo = 0;
+		
 
 		// Obtiene el valor máximo de array
 		int maximo = obtenerMaximo(numeros);
 
-		// Cuenta cuántas veces aparece el valor máximo (el número mayor) y lo guarda en
-		// a
-		for (int i = 0; i < numeros.length; i++) {
-			if (numeros[i] == maximo) {
-				repeticionesMaximo++;
-			}
-		}
+		// Cuenta cuántas veces aparece el valor máximo (el número mayor)
+		int repeticionesMaximo = contarApariciones(numeros, maximo);
+
 
 		// Si se repite más de 1 vez, imprime por pantalla "SI"
 		boolean maximoSeRepite = (repeticionesMaximo > 1);
@@ -74,6 +70,16 @@ public class AnalisisArray {
 			}
 		}
 		return maximo;
+	}
+
+	private static int contarApariciones(int[] numeros, int valor) {
+	    int contador = 0;
+	    for (int i = 0; i < numeros.length; i++) {
+	        if (numeros[i] == valor) {
+	            contador++;
+	        }
+	    }
+	    return contador;
 	}
 
 }
