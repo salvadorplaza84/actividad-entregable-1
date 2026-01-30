@@ -26,14 +26,12 @@ public class AnalisisArray {
 	public static void main(String[] args) {
 
 		int[] numeros = { 5, 7, 3, 7, 2, 9, 7 };
-		
 
 		// Obtiene el valor máximo de array
 		int maximo = obtenerMaximo(numeros);
 
 		// Cuenta cuántas veces aparece el valor máximo (el número mayor)
 		int repeticionesMaximo = contarApariciones(numeros, maximo);
-
 
 		// Si se repite más de 1 vez, imprime por pantalla "SI"
 		boolean maximoSeRepite = (repeticionesMaximo > 1);
@@ -43,14 +41,8 @@ public class AnalisisArray {
 			System.out.println("NO");
 		}
 
-		// Suma el valor de todos los huecos del array
-		int suma = 0;
-		for (int i = 0; i < numeros.length; i++) {
-			suma += numeros[i];
-		}
-
 		// Saca la media de todos los huecos del array e imprime el valor
-		double media = (double) suma / numeros.length;
+		double media = calcularMedia(numeros);
 		System.out.println(media);
 
 		// Si la media es mayor o igual a 5 imprime por pantalla "BIEN"
@@ -61,7 +53,15 @@ public class AnalisisArray {
 		}
 	}
 
-	// Método para calcular el máximo
+	// MÉTODOS
+
+	/**
+	 * Devuelve el valor máximo del array.
+	 * @param numeros array de enteros
+	 * @return valor máximo
+	 */
+	
+
 	private static int obtenerMaximo(int[] numeros) {
 		int maximo = numeros[0];
 		for (int i = 1; i < numeros.length; i++) {
@@ -72,14 +72,37 @@ public class AnalisisArray {
 		return maximo;
 	}
 
+	/**
+	 * Cuenta cuántas veces aparece un valor dentro del array.
+	 * @param numeros array de enteros
+	 * @param valor valor a buscar
+	 * @return número de apariciones
+	 */
+	
+
 	private static int contarApariciones(int[] numeros, int valor) {
-	    int contador = 0;
-	    for (int i = 0; i < numeros.length; i++) {
-	        if (numeros[i] == valor) {
-	            contador++;
-	        }
-	    }
-	    return contador;
+		int contador = 0;
+		for (int i = 0; i < numeros.length; i++) {
+			if (numeros[i] == valor) {
+				contador++;
+			}
+		}
+		return contador;
+	}
+
+	/**
+	 * Calcula la media aritmética del array.
+	 * @param numeros array de enteros
+	 * @return media aritmética
+	 */
+	
+
+	private static double calcularMedia(int[] numeros) {
+		int suma = 0;
+		for (int i = 0; i < numeros.length; i++) {
+			suma += numeros[i];
+		}
+		return (double) suma / numeros.length;
 	}
 
 }
