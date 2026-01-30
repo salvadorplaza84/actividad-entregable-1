@@ -5,11 +5,13 @@ package ejerciciosexamen;
  * <p>
  * Muestra por pantalla si el valor máximo del array se repite más de una vez
  * ("SI"/"NO"), calcula la media y evalúa si es "BIEN" (media >= 5) o "MAL"
- * (media < 5).
+ * ({@code media < 5}).
  * </p>
  */
 
 public class AnalisisArray {
+	private static final int UMBRAL_MEDIA = 5;
+
 	/**
 	 * Punto de entrada del programa. Usa un array de ejemplo y muestra:
 	 * <ul>
@@ -21,7 +23,6 @@ public class AnalisisArray {
 	 *
 	 * @param args argumentos de línea de comandos (no se utilizan).
 	 */
-	private static final int UMBRAL_MEDIA = 5;
 
 	public static void main(String[] args) {
 
@@ -57,10 +58,10 @@ public class AnalisisArray {
 
 	/**
 	 * Devuelve el valor máximo del array.
+	 * 
 	 * @param numeros array de enteros
 	 * @return valor máximo
 	 */
-	
 
 	private static int obtenerMaximo(int[] numeros) {
 		int maximo = numeros[0];
@@ -74,11 +75,11 @@ public class AnalisisArray {
 
 	/**
 	 * Cuenta cuántas veces aparece un valor dentro del array.
+	 * 
 	 * @param numeros array de enteros
-	 * @param valor valor a buscar
+	 * @param valor   valor a buscar
 	 * @return número de apariciones
 	 */
-	
 
 	private static int contarApariciones(int[] numeros, int valor) {
 		int contador = 0;
@@ -92,10 +93,10 @@ public class AnalisisArray {
 
 	/**
 	 * Calcula la media aritmética del array.
+	 * 
 	 * @param numeros array de enteros
 	 * @return media aritmética
 	 */
-	
 
 	private static double calcularMedia(int[] numeros) {
 		int suma = 0;
