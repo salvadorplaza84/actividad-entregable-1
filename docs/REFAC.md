@@ -9,14 +9,21 @@ NO
 BIEN
 
 ## Cambios realizados
-1. Renombrado de variables para mejorar la legibilidad (nombres descriptivos en lugar de letras sueltas).
-2. Sustitución de un “flag” numérico por un boolean (`maximoSeRepite`) para expresar mejor la intención.
-3. Creación de la constante `UMBRAL_MEDIA` para eliminar el número mágico 5.
-4. Reordenación del cálculo de `maximoSeRepite` para que se evalúe después de contar las repeticiones.
+1. Renombrado de la clase `p` a `AnalisisArray` y reorganización del código en `src/` para seguir una estructura estándar.
+2. Renombrado de variables para mejorar la legibilidad (nombres descriptivos en lugar de letras sueltas).
+3. Sustitución de un “flag” numérico por un boolean (`maximoSeRepite`) para expresar mejor la intención.
+4. Creación de la constante `UMBRAL_MEDIA` para eliminar el número mágico 5.
+5. Extracción de métodos para mejorar modularidad y reutilización:
+   - `obtenerMaximo(int[] numeros)`
+   - `contarApariciones(int[] numeros, int valor)`
+   - `calcularMedia(int[] numeros)`
+6. Eliminación de código duplicado en `main` (el cálculo de la suma/media queda encapsulado en `calcularMedia`).
+7. Añadido de Javadoc a los métodos para mejorar la documentación interna.
 
 ## Justificación
 - Los nombres descriptivos hacen el código más fácil de entender y mantener.
 - Un boolean expresa mejor una condición (verdadero/falso) que un entero 0/1.
 - Las constantes evitan números “mágicos” y facilitan cambios futuros en un único punto.
-- El reordenamiento asegura que la condición se calcule con datos ya actualizados sin cambiar la funcionalidad del programa.
+- Extraer métodos reduce la complejidad del `main`, mejora la modularidad y permite reutilizar lógica sin duplicar código.
+- Documentar métodos con Javadoc facilita el mantenimiento y el uso del código por otras personas.
 
