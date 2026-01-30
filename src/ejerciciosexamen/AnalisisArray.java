@@ -23,38 +23,31 @@ public class AnalisisArray {
 	 */
 	private static final int UMBRAL_MEDIA = 5;
 
-
 	public static void main(String[] args) {
 
 		int[] numeros = { 5, 7, 3, 7, 2, 9, 7 };
 		int repeticionesMaximo = 0;
-		boolean maximoSeRepite = (repeticionesMaximo > 1);
-		int maximo = numeros[0];
 
-		// Guarda en c el número mayor del array
-		for (int i = 1; i < numeros.length; i++) {
-			if (numeros[i] > maximo) {
-				maximo = numeros[i];
-			}
-		}
+		// Obtiene el valor máximo de array
+		int maximo = obtenerMaximo(numeros);
 
-		// Cuenta cuántas veces aparece c (el número mayor) y lo guarda en a
+		// Cuenta cuántas veces aparece el valor máximo (el número mayor) y lo guarda en
+		// a
 		for (int i = 0; i < numeros.length; i++) {
 			if (numeros[i] == maximo) {
 				repeticionesMaximo++;
 			}
 		}
 
-	
-
 		// Si se repite más de 1 vez, imprime por pantalla "SI"
+		boolean maximoSeRepite = (repeticionesMaximo > 1);
 		if (maximoSeRepite) {
 			System.out.println("SI");
 		} else {
 			System.out.println("NO");
 		}
 
-		// Suma en s el valor de todos los huecos del array
+		// Suma el valor de todos los huecos del array
 		int suma = 0;
 		for (int i = 0; i < numeros.length; i++) {
 			suma += numeros[i];
@@ -71,4 +64,16 @@ public class AnalisisArray {
 			System.out.println("MAL");
 		}
 	}
+
+	// Método para calcular el máximo
+	private static int obtenerMaximo(int[] numeros) {
+		int maximo = numeros[0];
+		for (int i = 1; i < numeros.length; i++) {
+			if (numeros[i] > maximo) {
+				maximo = numeros[i];
+			}
+		}
+		return maximo;
+	}
+
 }
