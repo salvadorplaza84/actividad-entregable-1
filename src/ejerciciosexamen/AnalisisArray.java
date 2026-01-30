@@ -21,52 +21,51 @@ public class AnalisisArray {
 	 *
 	 * @param args argumentos de línea de comandos (no se utilizan).
 	 */
+	private static final int UMBRAL_MEDIA = 5;
+
 
 	public static void main(String[] args) {
 
-		int[] n = { 5, 7, 3, 7, 2, 9, 7 };
-		int a = 0;
-		int b = 0;
-		int c = n[0];
+		int[] numeros = { 5, 7, 3, 7, 2, 9, 7 };
+		int repeticionesMaximo = 0;
+		boolean maximoSeRepite = (repeticionesMaximo > 1);
+		int maximo = numeros[0];
 
 		// Guarda en c el número mayor del array
-		for (int i = 1; i < n.length; i++) {
-			if (n[i] > c) {
-				c = n[i];
+		for (int i = 1; i < numeros.length; i++) {
+			if (numeros[i] > maximo) {
+				maximo = numeros[i];
 			}
 		}
 
 		// Cuenta cuántas veces aparece c (el número mayor) y lo guarda en a
-		for (int i = 0; i < n.length; i++) {
-			if (n[i] == c) {
-				a++;
+		for (int i = 0; i < numeros.length; i++) {
+			if (numeros[i] == maximo) {
+				repeticionesMaximo++;
 			}
 		}
 
-		// Si se repite más de una vez, cambia b de 0 a 1
-		if (a > 1) {
-			b = 1;
-		}
+	
 
 		// Si se repite más de 1 vez, imprime por pantalla "SI"
-		if (b == 1) {
+		if (maximoSeRepite) {
 			System.out.println("SI");
 		} else {
 			System.out.println("NO");
 		}
 
 		// Suma en s el valor de todos los huecos del array
-		int s = 0;
-		for (int i = 0; i < n.length; i++) {
-			s += n[i];
+		int suma = 0;
+		for (int i = 0; i < numeros.length; i++) {
+			suma += numeros[i];
 		}
 
 		// Saca la media de todos los huecos del array e imprime el valor
-		double r = (double) s / n.length;
-		System.out.println(r);
+		double media = (double) suma / numeros.length;
+		System.out.println(media);
 
 		// Si la media es mayor o igual a 5 imprime por pantalla "BIEN"
-		if (r >= 5) {
+		if (media >= UMBRAL_MEDIA) {
 			System.out.println("BIEN");
 		} else {
 			System.out.println("MAL");
